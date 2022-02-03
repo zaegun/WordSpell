@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">WordSpell</string>
+    <string name="how_many_words">How Many Words?</string>
+    <string name="start_button">START</string>
+</resources>
