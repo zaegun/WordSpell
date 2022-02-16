@@ -25,13 +25,19 @@ class Startup : AppCompatActivity() {
         //val scoreText = Global.wordData[Global.currentInt].score
         //val wordText = Global.wordData[Global.currentInt].word
         Global.generateWordList()
-        startUpText.text = Global.getScore(Global.wordList[Global.currentInt]).toString()
+        startUpText.text = Global.workingList.toString()
+        Global.setWorkingList(Global.wordList[Global.numberOfWords])
 
         val button = findViewById<Button>(R.id.button)
         button.setOnClickListener {
-            //Global.cyclePos()
+            Global.cyclePos()
             Global.setScore("apple", 3)
-            startUpText.text = Global.getScore(Global.wordList[Global.currentInt]).toString()
+            Global.setWorkingList(Global.wordList[Global.numberOfWords])
+
+            startUpText.text = Global.workingList::class.simpleName
+            //startUpText.text = Global.wordList::class.simpleName
+            //startUpText.text = Global.getScore(Global.wordList[Global.currentInt]).toString()
+
             //val intent = Intent(this@Startup, MainMenu::class.java)
             //startActivity(intent)
             //finish()
@@ -59,26 +65,24 @@ class WordData(newWord : String, newScore : Int, newDate : String ){
 }
 
 object Global {
-    var wordData = mutableListOf<WordData>()
-    var wordList = mutableListOf<String>()
-    var currentInt = 0
+    // GLOBAL DATA
+    private var wordData = mutableListOf<WordData>()    // Contains all word data
+    var wordList = mutableListOf<String>()              // List of all the words
+        private set             // Should only be set at startup
 
-    fun setCurrentDataList(wordObject : WordData) {
-        wordData.add(wordObject)
+    var workingList = mutableListOf<String>()   // Creates a smaller working list
+    var numberOfWords = 0       // The amount of words the user wants to go through
+
+    fun setCurrentDataList(data : WordData) {
+        // Adds the word data to the list
+        wordData.add(data)
     }
 
     fun generateWordList(){
+        // Makes a list using the word names in the data
         for(wordData in wordData) {
             wordList.add(wordData.word)
         }
-    }
-
-    fun getScore(refWord : String) : Int {
-        // This finds the data based on the reference word
-        val foundWord = wordData.find {it.word == refWord}
-
-        //  Return the score
-        return foundWord?.score!!
     }
 
     fun setScore(refWord : String, newScore : Int) {
@@ -90,16 +94,35 @@ object Global {
             // If it needs updating, update with the new score and date
             foundWord?.score = newScore
         }
-
-
     }
 
+    fun getScore(refWord : String) : Int {
+        // This finds the data based on the reference word
+        val foundWord = wordData.find {it.word == refWord}
+        //  Return the score
+        return foundWord?.score!!
+    }
+
+    fun setWorkingList (word : String) {
+        // Adds the word to the working list
+        workingList.add(word)
+    }
+
+    fun setNumOfWords (amount : Int) {
+        numberOfWords = amount
+    }
+
+    fun getNumOfWords() : Int {
+        return numberOfWords
+    }
+
+    // TESTING ONLY
     fun cyclePos() {
-        if (currentInt < 3) {
-            currentInt += 1
+        if (numberOfWords < 3) {
+            setNumOfWords(numberOfWords + 1)
         }
         else {
-            currentInt = 0
+            setNumOfWords(0)
         }
     }
 }
