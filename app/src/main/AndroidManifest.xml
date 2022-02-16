@@ -10,10 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WordSpell">
         <activity
-            android:name=".Startup"
-            android:exported="false" />
-        <activity
             android:name=".MainMenu"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity
+            android:name=".Startup"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
