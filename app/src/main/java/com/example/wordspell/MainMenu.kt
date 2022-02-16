@@ -9,6 +9,8 @@ class MainMenu : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_menu)
         var startUpText : TextView = findViewById<TextView>(R.id.main_menu_header)
-        startUpText.text = Global.currentData[Global.currentInt].getWord()
+        val scoreText = Global.wordData[Global.currentInt].score
+        val wordText = Global.wordData[Global.currentInt].word
+        startUpText.text = wordText + scoreText.toString()
     }
 }
