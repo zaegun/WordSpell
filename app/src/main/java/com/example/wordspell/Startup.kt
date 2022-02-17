@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
 import android.widget.Button
+import android.content.Intent
 
 
 
@@ -22,32 +23,20 @@ class Startup : AppCompatActivity() {
         }
 
         val startUpText = findViewById<TextView>(R.id.startUpLabel)
-        //val scoreText = Global.wordData[Global.currentInt].score
-        //val wordText = Global.wordData[Global.currentInt].word
         Global.generateWordList()
-        startUpText.text = Global.workingList.toString()
-        Global.setWorkingList(Global.wordList[Global.numberOfWords])
+
+        startUpText.text = Global.getNumOfWords().toString()
 
         val button = findViewById<Button>(R.id.button)
         button.setOnClickListener {
-            Global.cyclePos()
-            Global.setScore("apple", 3)
-            if(Global.getNumOfWords() < 2) {
-                Global.setWorkingList(Global.wordList[Global.numberOfWords])
-            }
-            else {
-                Global.resetWorkingList()
-            }
-
-            startUpText.text = Global.workingList.toString()
-            //startUpText.text = Global.workingList::class.simpleName
-            //startUpText.text = Global.wordList::class.simpleName
-            //startUpText.text = Global.getScore(Global.wordList[Global.currentInt]).toString()
-
-            //val intent = Intent(this@Startup, MainMenu::class.java)
-            //startActivity(intent)
-            //finish()
+            goToMainMenu()
         }
+    }
+
+    fun goToMainMenu() {
+        val intent = Intent(this@Startup, MainMenu::class.java)
+        startActivity(intent)
+        finish()
     }
 }
 
