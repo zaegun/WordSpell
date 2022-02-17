@@ -10,30 +10,62 @@ import android.content.Intent
 
 class Startup : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        // Created the instance and the layout
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_startup)
 
-        val wordList = arrayOf("apple", "truck", "toy")
-        val scoreList = arrayOf(2,4,1)
-        val scoreDateTime  = "2022.02.16 at 2:27:00"
+        // Load the user's data
+        loadData()
 
-        for (i in wordList.indices) {
-            val wordDataObject = WordData(wordList[i], scoreList[i], scoreDateTime)
-            Global.setCurrentDataList(wordDataObject)
-        }
-
-        val startUpText = findViewById<TextView>(R.id.startUpLabel)
-        Global.generateWordList()
-
-        startUpText.text = Global.getNumOfWords().toString()
-
+        // Gets the button and listens for the click to go to the next Activity
         val button = findViewById<Button>(R.id.button)
         button.setOnClickListener {
             goToMainMenu()
         }
     }
 
+    fun loadData() {
+        // Current implementation is hard coded.
+        // This will be altered according to database.
+        val wordList = arrayOf(
+            "apple",
+            "bath",
+            "boat",
+            "child",
+            "clock",
+            "dress",
+            "eight",
+            "eleven",
+            "gray",
+            "happy",
+            "house",
+            "lock",
+            "lunch",
+            "night",
+            "pool",
+            "school",
+            "sea",
+            "shape",
+            "sky",
+            "slide",
+            "stone",
+            "truck",
+            "tune",
+            "winter"
+        )
+        val scoreList = 0
+        val scoreDateTime  = "2022.02.16 at 2:27:00"
+
+        for (i in wordList.indices) {
+            val wordDataObject = WordData(wordList[i], scoreList, scoreDateTime)
+            Global.setCurrentDataList(wordDataObject)
+        }
+
+        Global.generateWordList()
+    }
+
     fun goToMainMenu() {
+        // This function will redirect the page to the main menu
         val intent = Intent(this@Startup, MainMenu::class.java)
         startActivity(intent)
         finish()
