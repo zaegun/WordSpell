@@ -26,12 +26,6 @@ class Startup : AppCompatActivity() {
         }
 
         // FOR TESTING
-        val textArea = findViewById<TextView>(R.id.editTextTextPersonName)
-        val testList = Global.getTestList()
-        val testScore0 = Global.getScore(testList[0]).toString()
-        val testScore1 = Global.getScore(testList[1]).toString()
-        val testScore2 = Global.getScore(testList[2]).toString()
-        textArea.text = Global.getNumOfWords().toString()
 
         val button2 = findViewById<Button>(R.id.button2)
         button2.setOnClickListener {
@@ -198,7 +192,6 @@ object Global {
         }
 
         return testList
-
     }
 
 }
