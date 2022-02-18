@@ -26,19 +26,20 @@ class Startup : AppCompatActivity() {
         }
 
         // FOR TESTING
-
         val button2 = findViewById<Button>(R.id.button2)
         button2.setOnClickListener {
             val intent = Intent(this@Startup, WordSpell::class.java)
             startActivity(intent)
             finish()
         }
+
         val button3 = findViewById<Button>(R.id.button3)
         button3.setOnClickListener {
             val intent = Intent(this@Startup, Results::class.java)
             startActivity(intent)
             finish()
         }
+
         val button4 = findViewById<Button>(R.id.button4)
         button4.setOnClickListener {
             val intent = Intent(this@Startup, HighScore::class.java)
@@ -164,19 +165,19 @@ object Global {
         workingList.clear()
     }
 
-    fun getNumOfWords() : Int {
+    fun getTrackNum() : Int {
         // This returns the number of words the user wants to be tested on
         return numberOfWords
     }
 
-    fun setNumOfWords(amount : Int) {
+    fun setTrackNum(amount : Int) {
         // This sets the number of words the user wants to be tested on
         numberOfWords = amount
     }
 
-    fun resetNumOfWords() {
+    fun resetTrackNum() {
         // Sets the number of words counter to 0
-        setNumOfWords(0)
+        setTrackNum(0)
     }
 
     fun getTestList(): MutableList<String> {
@@ -186,7 +187,7 @@ object Global {
         testList.add("truck")
         testList.add("school")
 
-        setNumOfWords(testList.size)
+        setTrackNum(testList.size)
         for(word in testList) {
             setScore(word, (0..3).random() )
         }
