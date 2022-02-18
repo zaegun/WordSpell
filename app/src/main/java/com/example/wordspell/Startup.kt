@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.TextView
 import android.widget.Button
 import android.content.Intent
+import android.util.Log
 
 
 
@@ -17,10 +18,33 @@ class Startup : AppCompatActivity() {
         // Load the user's data
         loadData()
 
+
         // Gets the button and listens for the click to go to the next Activity
         val button = findViewById<Button>(R.id.button)
         button.setOnClickListener {
             goToMainMenu()
+        }
+
+        // FOR TESTING
+        val button2 = findViewById<Button>(R.id.button2)
+        button2.setOnClickListener {
+            val intent = Intent(this@Startup, WordSpell::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        val button3 = findViewById<Button>(R.id.button3)
+        button3.setOnClickListener {
+            val intent = Intent(this@Startup, Results::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        val button4 = findViewById<Button>(R.id.button4)
+        button4.setOnClickListener {
+            val intent = Intent(this@Startup, HighScore::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 
@@ -141,28 +165,34 @@ object Global {
         workingList.clear()
     }
 
-    fun getNumOfWords() : Int {
+    fun getTrackNum() : Int {
         // This returns the number of words the user wants to be tested on
         return numberOfWords
     }
 
-    fun setNumOfWords(amount : Int) {
+    fun setTrackNum(amount : Int) {
         // This sets the number of words the user wants to be tested on
         numberOfWords = amount
     }
 
-    fun resetNumOfWords() {
+    fun resetTrackNum() {
         // Sets the number of words counter to 0
-        setNumOfWords(0)
+        setTrackNum(0)
     }
 
-    // TESTING ONLY
-    fun cyclePos() {
-        if (numberOfWords < 3) {
-            setNumOfWords(numberOfWords + 1)
+    fun getTestList(): MutableList<String> {
+        // Creates a list for testing, updates their scores, and applies the correct tracking number
+        val testList = mutableListOf<String>()
+        testList.add("apple")
+        testList.add("truck")
+        testList.add("school")
+
+        setTrackNum(testList.size)
+        for(word in testList) {
+            setScore(word, (0..3).random() )
         }
-        else {
-            resetNumOfWords()
-        }
+
+        return testList
     }
+
 }
