@@ -6,9 +6,9 @@ import android.widget.TextView
 import android.widget.Button
 import android.content.Intent
 
-class MainMenu : AppCompatActivity() {
+class WordSpell : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main_menu)
+        setContentView(R.layout.activity_word_spell)
     }
 }
