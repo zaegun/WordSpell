@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#79EDB0"
-    tools:context=".WordSpell">
+    tools:context=".HighScore">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/main_menu_card"

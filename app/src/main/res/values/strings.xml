@@ -4,4 +4,8 @@
     <string name="start_button">START</string>
     <string name="label">Label</string>
     <string name="wordspelllogo">WordSpellLogo</string>
+    <string name="high_score">High Score</string>
+    <string name="results">Results</string>
+    <string name="word_spell">Word Spell</string>
+    <string name="main_menu">Main Menu</string>
 </resources>
