@@ -12,3 +12,4 @@ class Results : AppCompatActivity() {
         setContentView(R.layout.activity_results)
     }
 }
+
