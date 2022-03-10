@@ -181,10 +181,13 @@ object Global {
         setTrackNum(0)
     }
 
-    fun getResultsData() {
-        //TEMP
-        val list = getTestList()
-        // Cycle Through the list
+    fun getResultsData(list: MutableList<String>) : MutableList<WordData> {
+        // For the Results screen the Recycle View needs access to the word name and score.
+        // As the working list only contains the word names, we need to create a list with
+        // Word Data objects in them using the supplied working list without effecting
+        // The main data.
+
+        // Cycle through the supplied list
         for (reference in list) {
             // Find the correct word data object
             val foundWord = wordData.find { it.word == reference }
@@ -193,6 +196,8 @@ object Global {
                 resultsData.add(foundWord)
             }
         }
+        // Return the list which has the word data
+        return resultsData
     }
 
     fun getTestList(): MutableList<String> {
