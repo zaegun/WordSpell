@@ -8,4 +8,7 @@
     <string name="results">Results</string>
     <string name="word_spell">Word Spell</string>
     <string name="main_menu">Main Menu</string>
+    <string name="scores">SCORES</string>
+    <string name="subString">-</string>
+    <string name="addString">+</string>
 </resources>
