@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,7 +7,7 @@
     tools:context=".Results">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/activity_results_card"
+        android:id="@+id/main_menu_card"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
@@ -24,67 +23,57 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/results_card_content"
+            android:id="@+id/main_menu_card_content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:cardCornerRadius="12dp"
             app:contentPadding="20dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/results_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <TextView
                     android:id="@+id/results_header"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="500dp"
+                    android:layout_height="96dp"
                     android:fontFamily="@font/open_sans_bold"
-                    android:text="Results"
+                    android:text="@string/results"
                     android:textAlignment="center"
                     android:textColor="#1E7ABE"
                     android:textSize="48sp"
                     android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/recyclerView"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toTopOf="@+id/main_menu_btn"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/results_header">
+
+                </androidx.recyclerview.widget.RecyclerView>
 
                 <Button
-                    android:id="@+id/start_button"
-                    android:layout_width="280dp"
+                    android:id="@+id/main_menu_btn"
+                    android:layout_width="match_parent"
                     android:layout_height="75dp"
-                    android:layout_marginTop="520dp"
-                    android:layout_marginBottom="20dp"
+                    android:backgroundTint="#E0495A"
                     android:fontFamily="@font/open_sans"
                     android:lineSpacingExtra="0dp"
-                    android:text="@string/start_button"
+                    android:text="@string/main_menu"
                     android:textAlignment="center"
                     android:textColor="#FFFFFF"
                     android:textSize="34sp"
-                    app:backgroundTint="#E0495A"
-                    app:cornerRadius="16dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <EditText
-                    android:id="@+id/test_text_box"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="21dp"
-                    android:layout_marginEnd="113dp"
-                    android:layout_marginBottom="301dp"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="Name"
-                    app:layout_constraintBottom_toTopOf="@+id/start_button"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/results_header" />
+                    app:layout_constraintStart_toStartOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
