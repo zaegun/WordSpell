@@ -28,35 +28,84 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:cardCornerRadius="12dp"
-            app:contentPadding="20dp">
+            app:contentPadding="30dp">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/main_menu_header"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_marginBottom="460dp"
-                    android:layout_marginTop = "20dp"
+                    android:layout_height="160dp"
+                    android:layout_marginTop="20dp"
                     android:fontFamily="@font/open_sans_bold"
                     android:text="@string/how_many_words"
                     android:textAlignment="center"
                     android:textColor="#1E7ABE"
                     android:textSize="48sp"
                     android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:layout_marginBottom="25dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/subBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/subString"
+                        android:textColor="@color/white"
+                        android:textSize="50sp"
+                        android:backgroundTint="#1E7ABE"/>
+
+                    <TextView
+                        android:id="@+id/numView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="25dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:textAlignment="center"
+                        android:textColor="#2FDD7E"
+                        android:textSize="75sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/addBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/addString"
+                        android:textColor="@color/white"
+                        android:textSize="50sp"
+                        android:backgroundTint="#1E7ABE"
+                        app:cornerRadius="30dp"/>
+                </LinearLayout>
 
                 <Button
-                    android:id="@+id/start_button"
-                    android:layout_width="280dp"
+                    android:id="@+id/scoreBtn"
+                    android:layout_width="match_parent"
                     android:layout_height="75dp"
-                    android:layout_marginTop="520dp"
                     android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/open_sans"
+                    android:lineSpacingExtra="0dp"
+                    android:text="@string/scores"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="34sp"
+                    app:backgroundTint="#9555FF"
+                    app:cornerRadius="30dp" />
+
+                <Button
+                    android:id="@+id/startBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
                     android:fontFamily="@font/open_sans"
                     android:lineSpacingExtra="0dp"
                     android:text="@string/start_button"
@@ -64,12 +113,9 @@
                     android:textColor="#FFFFFF"
                     android:textSize="34sp"
                     app:backgroundTint="#E0495A"
-                    app:cornerRadius="16dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    app:cornerRadius="30dp" />
+
+            </LinearLayout>
 
         </androidx.cardview.widget.CardView>
     </androidx.cardview.widget.CardView>
