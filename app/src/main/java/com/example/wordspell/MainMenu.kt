@@ -27,25 +27,17 @@ class MainMenu : AppCompatActivity() {
         resetWorkingData()
 
         // Set listeners for the buttons
-        subBtn.setOnClickListener(){
-            // Listener to subtract 1 from the tracking number
-            subTrack()
-        }
+        // Listener to subtract 1 from the tracking number
+        subBtn.setOnClickListener(){ subTrack() }
 
-        addBtn.setOnClickListener(){
-            // Listener to add 1 to the tracking number
-            addTrack()
-        }
+        // Listener to add 1 to the tracking number
+        addBtn.setOnClickListener(){ addTrack() }
 
-        scoreBtn.setOnClickListener() {
-            // Listener so the user can go to the score screen
-            goToScoreView()
-        }
+        // Listener so the user can go to the score screen
+        scoreBtn.setOnClickListener() { goToScoreView() }
 
-        startBtn.setOnClickListener() {
-            // Listener so the user can go to the score screen
-            goToWordSpellView()
-        }
+        // Listener so the user can go to the score screen
+        startBtn.setOnClickListener() { goToWordSpellView() }
     }
 
     fun subTrack() {
@@ -79,7 +71,12 @@ class MainMenu : AppCompatActivity() {
         val intent = Intent(this@MainMenu, Results::class.java)
         startActivity(intent)
         finish()
+    }
 
+    fun resetWorkingData() {
+        // Reset working data
+        Global.resetWorkingList()
+        Global.resetTrackNum()
     }
 
     fun goToWordSpellView() {
@@ -94,12 +91,6 @@ class MainMenu : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-    }
-
-    fun resetWorkingData() {
-        // Reset working data
-        Global.resetWorkingList()
-        Global.resetTrackNum()
     }
 
     fun createWorkingList() {
