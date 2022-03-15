@@ -124,6 +124,7 @@ object Global {
     // The working list is an array of words that are created based on the number of words selected
     var workingList = mutableListOf<String>()   // Smaller array of words for usage
     var numberOfWords = 0       // The amount of words the user wants to go through
+    var resultsData = mutableListOf<WordData>()
 
     fun setCurrentDataList(data : WordData) {
         // Adds the word data to the list
@@ -180,6 +181,25 @@ object Global {
         setTrackNum(0)
     }
 
+    fun getResultsData(list: MutableList<String>) : MutableList<WordData> {
+        // For the Results screen the Recycle View needs access to the word name and score.
+        // As the working list only contains the word names, we need to create a list with
+        // Word Data objects in them using the supplied working list without effecting
+        // The main data.
+
+        // Cycle through the supplied list
+        for (reference in list) {
+            // Find the correct word data object
+            val foundWord = wordData.find { it.word == reference }
+            // Add the object to the resultsData list
+            if (foundWord != null) {
+                resultsData.add(foundWord)
+            }
+        }
+        // Return the list which has the word data
+        return resultsData
+    }
+
     fun getTestList(): MutableList<String> {
         // Creates a list for testing, updates their scores, and applies the correct tracking number
         val testList = mutableListOf<String>()
@@ -196,3 +216,4 @@ object Global {
     }
 
 }
+
