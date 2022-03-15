@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WordSpell">
         <activity
+            android:name=".DBTest"
+            android:exported="false" />
+        <activity
             android:name=".HighScore"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
