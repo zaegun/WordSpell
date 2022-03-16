@@ -49,7 +49,6 @@ class Startup : AppCompatActivity() {
         }
 
         val testView = findViewById<TextView>(R.id.textView2)
-        Global.setScore("apple", 0, this)
         testView.text = Global.getScore("apple").toString()
     }
 
