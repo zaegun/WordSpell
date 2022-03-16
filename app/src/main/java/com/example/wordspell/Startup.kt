@@ -81,7 +81,7 @@ class Startup : AppCompatActivity() {
                 val score = 0
                 val date = "2022.02.16 at 2:27:00"
 
-                // Create the WordData object
+                // Create the WordData object using the parameters
                 val newWord = WordData(word, score, date)
 
                 // Put into the db
