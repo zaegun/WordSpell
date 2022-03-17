@@ -8,11 +8,15 @@ class WordSpell : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_word_spell)
     }
-    //        // Save the total word list
+    // Save the total word list
     val wordList = Global.getTestList()
+    // The word currently being spelled
     var currentWord = ""
+    // Letters of the current word
     val wordLetters = mutableListOf<String>()
+    // Letters to be chosen from
     val letterOptions = mutableListOf<String>()
+    // Letters currently selected
     val currentLetters = mutableListOf<String>()
 
     // Grab text box elements
