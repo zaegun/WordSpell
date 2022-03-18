@@ -1,6 +1,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/displayPicture"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#79EDB0"
@@ -34,99 +35,107 @@
                 android:layout_height="match_parent">
 
                 <Button
-                    android:id="@+id/button16"
+                    android:id="@+id/letter7"
                     android:layout_width="58dp"
                     android:layout_height="50dp"
                     android:layout_marginBottom="84dp"
+                    android:onClick="spellWord"
                     android:text="Button"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/button17"
+                    app:layout_constraintEnd_toStartOf="@+id/letter8"
                     app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/button18" />
+                    app:layout_constraintStart_toEndOf="@+id/letter6" />
 
                 <Button
-                    android:id="@+id/button17"
+                    android:id="@+id/letter8"
                     android:layout_width="58dp"
                     android:layout_height="50dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="84dp"
+                    android:onClick="spellWord"
                     android:text="Button"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/button16" />
+                    app:layout_constraintStart_toEndOf="@+id/letter7" />
 
                 <Button
-                    android:id="@+id/button7"
+                    android:id="@+id/letter5"
                     android:layout_width="58dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="16dp"
                     android:layout_marginBottom="84dp"
+                    android:onClick="spellWord"
                     android:text="Button"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/button18"
+                    app:layout_constraintEnd_toStartOf="@+id/letter6"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent" />
 
                 <Button
-                    android:id="@+id/button27"
+                    android:id="@+id/letter1"
                     android:layout_width="58dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="16dp"
                     android:layout_marginBottom="16dp"
-                    android:text="Button"
-                    app:layout_constraintBottom_toTopOf="@+id/button7"
-                    app:layout_constraintEnd_toStartOf="@+id/button28"
+                    android:onClick="spellWord"
+                    android:text="button"
+                    app:layout_constraintBottom_toTopOf="@+id/letter5"
+                    app:layout_constraintEnd_toStartOf="@+id/letter2"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent" />
 
                 <Button
-                    android:id="@+id/button28"
+                    android:id="@+id/letter2"
                     android:layout_width="58dp"
                     android:layout_height="50dp"
                     android:layout_marginBottom="16dp"
+                    android:onClick="spellWord"
                     android:text="Button"
-                    app:layout_constraintBottom_toTopOf="@+id/button18"
-                    app:layout_constraintEnd_toStartOf="@+id/button29"
+                    app:layout_constraintBottom_toTopOf="@+id/letter6"
+                    app:layout_constraintEnd_toStartOf="@+id/letter3"
                     app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/button27" />
+                    app:layout_constraintStart_toEndOf="@+id/letter1" />
 
                 <Button
-                    android:id="@+id/button29"
+                    android:id="@+id/letter3"
                     android:layout_width="58dp"
                     android:layout_height="50dp"
                     android:layout_marginBottom="16dp"
+                    android:onClick="spellWord"
                     android:text="Button"
-                    app:layout_constraintBottom_toTopOf="@+id/button16"
-                    app:layout_constraintEnd_toStartOf="@+id/button30"
+                    app:layout_constraintBottom_toTopOf="@+id/letter7"
+                    app:layout_constraintEnd_toStartOf="@+id/letter4"
                     app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/button28" />
+                    app:layout_constraintStart_toEndOf="@+id/letter2" />
 
                 <Button
-                    android:id="@+id/button30"
+                    android:id="@+id/letter4"
                     android:layout_width="58dp"
                     android:layout_height="50dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="16dp"
+                    android:onClick="spellWord"
                     android:text="Button"
-                    app:layout_constraintBottom_toTopOf="@+id/button17"
+                    app:layout_constraintBottom_toTopOf="@+id/letter8"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/button29" />
+                    app:layout_constraintStart_toEndOf="@+id/letter3" />
 
                 <Button
-                    android:id="@+id/button18"
+                    android:id="@+id/letter6"
                     android:layout_width="58dp"
                     android:layout_height="50dp"
                     android:layout_marginBottom="84dp"
+                    android:onClick="spellWord"
                     android:text="Button"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/button16"
+                    app:layout_constraintEnd_toStartOf="@+id/letter7"
                     app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/button7" />
+                    app:layout_constraintStart_toEndOf="@+id/letter5" />
 
                 <ImageView
-                    android:id="@+id/imageView2"
+                    android:id="@+id/imageDisplay"
                     android:layout_width="292dp"
                     android:layout_height="261dp"
                     android:layout_marginTop="88dp"
@@ -137,17 +146,16 @@
                     app:srcCompat="@drawable/img_apple" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/selectionDisplay"
                     android:layout_width="267dp"
                     android:layout_height="71dp"
                     android:layout_marginTop="16dp"
-                    android:text="TextView"
                     android:textAlignment="center"
                     android:textIsSelectable="false"
                     android:textSize="60sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                    app:layout_constraintTop_toBottomOf="@+id/imageDisplay" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
