@@ -1,5 +1,6 @@
 package com.example.wordspell
 
+import android.content.Intent
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -142,6 +143,17 @@ class WordSpell : AppCompatActivity() {
     }
 
     private fun setBtnVisibility(btn : Button) {
-        btn.visibility = View.INVISIBLE
+        if(btn.visibility == View.VISIBLE){
+            btn.visibility = View.INVISIBLE
+        }
+        else {
+            btn.visibility = View.VISIBLE
+        }
+    }
+
+    private fun goToResults() {
+        val intent = Intent(this@WordSpell, Results::class.java)
+        startActivity(intent)
+        finish()
     }
 }
