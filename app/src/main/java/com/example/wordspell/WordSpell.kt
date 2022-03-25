@@ -120,6 +120,7 @@ class WordSpell : AppCompatActivity() {
         TODO("Not yet implemented")
     }
 
+    // ADDITIONAL FUNCTIONS
     private fun setImage(image : ImageView, word : String) {
         image.setImageResource(resources.getIdentifier(
             "img_$word",
@@ -138,5 +139,9 @@ class WordSpell : AppCompatActivity() {
                 ))
             mediaPlayer?.start()
         }
+    }
+
+    private fun setBtnVisibility(btn : Button) {
+        btn.visibility = View.INVISIBLE
     }
 }
