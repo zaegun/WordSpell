@@ -124,7 +124,11 @@ class WordSpell : AppCompatActivity() {
 
     // ADDITIONAL FUNCTIONS
     private fun setImage(word : String) {
+        // This sets the image view in based on what word is being worked on
+        // Get the image view
         val img = findViewById<ImageView>(R.id.imageDisplay)
+
+        // Sets the image based on the supplied word
         img.setImageResource(resources.getIdentifier(
             "img_$word",
             "drawable",
@@ -132,8 +136,13 @@ class WordSpell : AppCompatActivity() {
     }
 
     private fun setAudio(word : String) {
+        // This sets the listener for the audio button and tells it what to play
+        // Get the audio button
         val btn = findViewById<ImageButton>(R.id.audioBtn)
+
+        // Set the listener for the button
         btn.setOnClickListener {
+            // Get the audio file based on the supplied word
             val mediaPlayer = MediaPlayer.create(
                 this,
                 resources.getIdentifier(
@@ -141,11 +150,13 @@ class WordSpell : AppCompatActivity() {
                     "raw",
                     packageName
                 ))
+            // Start the audio file in the button
             mediaPlayer?.start()
         }
     }
 
     private fun setBtnVisibility(btn : Button) {
+        // Toggles the buttons visibility
         if(btn.visibility == View.VISIBLE){
             btn.visibility = View.INVISIBLE
         }
@@ -155,6 +166,7 @@ class WordSpell : AppCompatActivity() {
     }
 
     private fun goToResults() {
+        // Goes to the result screen
         val intent = Intent(this@WordSpell, Results::class.java)
         startActivity(intent)
         finish()
