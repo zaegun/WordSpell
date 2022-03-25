@@ -40,7 +40,7 @@
                     android:layout_height="50dp"
                     android:layout_marginBottom="84dp"
                     android:onClick="useButton7"
-                    android:text="d"
+                    android:text="u"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/letter8"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -91,7 +91,7 @@
                     android:layout_height="50dp"
                     android:layout_marginBottom="16dp"
                     android:onClick="useButton2"
-                    android:text="b"
+                    android:text="t"
                     app:layout_constraintBottom_toTopOf="@+id/letter6"
                     app:layout_constraintEnd_toStartOf="@+id/letter3"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -103,7 +103,7 @@
                     android:layout_height="50dp"
                     android:layout_marginBottom="16dp"
                     android:onClick="useButton3"
-                    android:text="c"
+                    android:text="r"
                     app:layout_constraintBottom_toTopOf="@+id/letter7"
                     app:layout_constraintEnd_toStartOf="@+id/letter4"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -138,9 +138,9 @@
                     android:id="@+id/imageDisplay"
                     android:layout_width="292dp"
                     android:layout_height="261dp"
-                    android:layout_marginTop="88dp"
+                    android:layout_marginTop="68dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.461"
+                    app:layout_constraintHorizontal_bias="0.692"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/img_apple" />
@@ -149,13 +149,55 @@
                     android:id="@+id/answerDisplay"
                     android:layout_width="268dp"
                     android:layout_height="94dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="4dp"
                     android:textAlignment="center"
                     android:textIsSelectable="false"
                     android:textSize="60sp"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.486"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageDisplay" />
+
+                <TextView
+                    android:id="@+id/completeText"
+                    android:layout_width="133dp"
+                    android:layout_height="33dp"
+                    android:layout_marginTop="12dp"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/answerDisplay" />
+
+                <TextView
+                    android:id="@+id/continuePrompt"
+                    android:layout_width="268dp"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="28dp"
+                    android:textAlignment="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.497"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:layout_marginEnd="4dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ui_full_star" />
+
+                <TextView
+                    android:id="@+id/scoreDisplay"
+                    android:layout_width="45dp"
+                    android:layout_height="47dp"
+                    android:text="3"
+                    android:textAlignment="textEnd"
+                    android:textSize="34sp"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView2"
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
