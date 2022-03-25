@@ -1,7 +1,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/displayPicture"
+    android:id="@+id/audiBtn"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#79EDB0"
@@ -156,6 +156,19 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageDisplay" />
+
+                <ImageButton
+                    android:id="@+id/audioBtn"
+                    android:layout_width="54dp"
+                    android:layout_height="59dp"
+                    android:layout_marginEnd="269dp"
+                    android:layout_marginBottom="29dp"
+                    app:layout_constraintBottom_toTopOf="@+id/imageDisplay"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ui_audio_button"
+                    android:contentDescription="audio"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

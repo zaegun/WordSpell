@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 
@@ -122,14 +123,16 @@ class WordSpell : AppCompatActivity() {
     }
 
     // ADDITIONAL FUNCTIONS
-    private fun setImage(image : ImageView, word : String) {
-        image.setImageResource(resources.getIdentifier(
+    private fun setImage(word : String) {
+        val img = findViewById<ImageView>(R.id.imageDisplay)
+        img.setImageResource(resources.getIdentifier(
             "img_$word",
             "drawable",
             packageName))
     }
 
-    private fun setAudio(btn : Button, word : String) {
+    private fun setAudio(word : String) {
+        val btn = findViewById<ImageButton>(R.id.audioBtn)
         btn.setOnClickListener {
             val mediaPlayer = MediaPlayer.create(
                 this,
