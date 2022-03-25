@@ -14,6 +14,8 @@ class WordSpell : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_word_spell)
+
+        initializePage("truck")
     }
     // Save the total word list
     val wordList = Global.getTestList()
@@ -55,7 +57,7 @@ class WordSpell : AppCompatActivity() {
             //currentWord.forEach { j -> wordLetters.add(j.toString()) }
             for (letter in currentWord)
                 wordLetters.add(letter.toString())
-            initializePage()
+            initializePage("truck")
             // Progress to next word
             currentWordNum++
         }
@@ -118,8 +120,9 @@ class WordSpell : AppCompatActivity() {
         wordDisplay.text = currentLetters
     }
 
-    private fun initializePage() {
-        TODO("Not yet implemented")
+    private fun initializePage(word : String) {
+        setImage(word)
+        setAudio(word)
     }
 
     // ADDITIONAL FUNCTIONS
