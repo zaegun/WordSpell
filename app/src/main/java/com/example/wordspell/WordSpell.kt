@@ -15,7 +15,7 @@ class WordSpell : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_word_spell)
 
-        initializePage("truck")
+        initializePage("apple")
     }
     // Save the total word list
     val wordList = Global.getTestList()
@@ -117,10 +117,12 @@ class WordSpell : AppCompatActivity() {
                 button.text = ""
                 currentLetterNum++
             }
-        wordDisplay.text = currentLetters
+        wordDisplay.text = formatSpellText(currentWord, currentLetters)
     }
 
     private fun initializePage(word : String) {
+        val wordDisplay = findViewById<TextView>(R.id.answerDisplay)
+        wordDisplay.text = formatSpellText(word, "")
         setImage(word)
         setAudio(word)
     }
@@ -173,5 +175,22 @@ class WordSpell : AppCompatActivity() {
         val intent = Intent(this@WordSpell, Results::class.java)
         startActivity(intent)
         finish()
+    }
+
+    private fun formatSpellText(currWord: String, currSpell : String) : String {
+        // This function will format the text view of the spelling word
+        // Get the remaining spaces that hasn't been spelled
+        var blankSpaces = currWord.length - currSpell.length
+
+        // Set the formatted word to the current spelling
+        var formattedWord = currSpell
+
+        // For each space that hasn't been spelled at an underscore
+        for(num in 1..blankSpaces){
+            formattedWord += "_"
+        }
+
+        // Return the current spelling with the underscores (UPPERCASE)
+        return formattedWord.uppercase()
     }
 }
