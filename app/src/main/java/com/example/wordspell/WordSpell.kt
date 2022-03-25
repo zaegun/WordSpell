@@ -1,9 +1,11 @@
 package com.example.wordspell
 
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 
 class WordSpell : AppCompatActivity() {
@@ -116,5 +118,25 @@ class WordSpell : AppCompatActivity() {
 
     private fun initializePage() {
         TODO("Not yet implemented")
+    }
+
+    private fun setImage(image : ImageView, word : String) {
+        image.setImageResource(resources.getIdentifier(
+            "img_$word",
+            "drawable",
+            packageName))
+    }
+
+    private fun setAudio(btn : Button, word : String) {
+        btn.setOnClickListener {
+            val mediaPlayer = MediaPlayer.create(
+                this,
+                resources.getIdentifier(
+                    word,
+                    "raw",
+                    packageName
+                ))
+            mediaPlayer?.start()
+        }
     }
 }
