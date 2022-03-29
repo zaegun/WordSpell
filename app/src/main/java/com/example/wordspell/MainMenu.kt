@@ -80,10 +80,27 @@ class MainMenu : AppCompatActivity() {
     }
 
     fun goToWordSpellView() {
-        createWorkingList()
+        // Set the tracking number
+        Global.setTrackNum(trackNum)
+        // Make sure the user selected an amount more than 0
+        if (Global.getTrackNum() > 0) {
+            // Set the working list
+            createWorkingList()
+            // Load the Word Spell Activity
+            val intent = Intent(this@MainMenu, WordSpell::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
     fun createWorkingList() {
-
+        // Generate a list of non-duplicate numbers ranging from 0 to the length of the word list
+        // Take the amount of numbers that the user selected
+        val randList = (0..Global.wordList.size).shuffled().take(Global.getTrackNum())
+        // The random numbers are the positions. Use those positions to get the word from the list.
+        for(i in randList) {
+            // Add the words to the working list.
+            Global.setWorkingList(Global.wordList[i])
+        }
     }
 }
