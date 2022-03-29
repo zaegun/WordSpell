@@ -52,7 +52,6 @@ class Startup : AppCompatActivity() {
         testView.text = Global.getScore("apple").toString()
     }
 
-
     fun loadData(db : DBHelper) {
         // Clears the Global local data for refresh from db
         Global.clearWordData()
