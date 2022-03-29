@@ -27,7 +27,7 @@ class Adapter(
         // Populate the view objects and applies the data
         val item = list[position]
         holder.apply{
-            tvWord.text = item.word
+            tvWord.text = item.word.uppercase()
             tvScore.text = item.score.toString()
         }
     }

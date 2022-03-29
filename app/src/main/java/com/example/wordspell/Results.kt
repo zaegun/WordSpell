@@ -15,6 +15,7 @@ class Results : AppCompatActivity() {
 
         // Set variables
         val rcv:RecyclerView = findViewById(R.id.recyclerView)
+        val mmBtn : Button = findViewById(R.id.main_menu_btn)
 
         // Sets which list will be displayed
         // If tracking number is 0, displays everything, otherwise display the wordlist
@@ -29,8 +30,18 @@ class Results : AppCompatActivity() {
             adapter = Adapter(scoreList)
         }
 
+        mmBtn.setOnClickListener{
+            // Navigate to the main menu
+            goToMainMenu()
+        }
 
+    }
 
+    fun goToMainMenu() {
+        // Set the intent and prevent back button usage
+        val intent = Intent(this@Results, MainMenu::class.java)
+        startActivity(intent)
+        finish()
     }
 }
 

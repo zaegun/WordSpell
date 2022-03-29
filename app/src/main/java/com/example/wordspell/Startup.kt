@@ -41,13 +41,6 @@ class Startup : AppCompatActivity() {
             finish()
         }
 
-        val button4 = findViewById<Button>(R.id.button4)
-        button4.setOnClickListener {
-            val intent = Intent(this@Startup, HighScore::class.java)
-            startActivity(intent)
-            finish()
-        }
-
         val testView = findViewById<TextView>(R.id.textView2)
         testView.text = Global.getScore("apple").toString()
     }
