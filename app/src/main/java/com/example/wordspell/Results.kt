@@ -38,6 +38,9 @@ class Results : AppCompatActivity() {
     }
 
     fun goToMainMenu() {
+        // Clear the results data
+        Global.clearResultsData()
+
         // Set the intent and prevent back button usage
         val intent = Intent(this@Results, MainMenu::class.java)
         startActivity(intent)

@@ -111,6 +111,11 @@ object Global {
         return resultsData
     }
 
+    fun clearResultsData() {
+        // This clears the results data
+        resultsData.clear()
+    }
+
     fun getTestList(): MutableList<String> {
         // Creates a list for testing, updates their scores, and applies the correct tracking number
         val testList = mutableListOf<String>()
