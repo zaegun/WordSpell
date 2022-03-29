@@ -1,32 +1,32 @@
-# Overview
+# Word Spell Overview
 
-{Important!  Do not say in this section that this is college assignment.  Talk about what you are trying to accomplish as a software engineer to further your learning.}
+This is an educational Android app to help kids with their spelling. The current implementation focuses on second grade spelling words.
 
-{Provide a description of your app.  Describe how to use the app.}
+In the app, the user can choose how many words they want to spell during their session. The app will generate random list of words for them to spell based on how many they want to go through.
 
-{Describe your purpose for creating this app.}
+Then the user will be shown a picture and told what word they should be spelling. At the bottom will be several buttons with letters on them. The user will use those buttons to try and spell the word correctly. They start out with 3 stars, and they lose a star for each mistake. 
 
-{Provide a link to your YouTube demonstration.  It should be a 4-5 minute demo of the app running and a walkthrough of the code.}
+After the word is spelled, they move on to the next word until the amount they chose is done. They then can see a list of their scores. They can also see all the high scores for all the words in the app.
 
 [Software Demo Video](http://youtube.link.goes.here)
 
-# Development Environment
+# Development Environment Links
 
-{Describe the tools that you used to develop the app}
-
-{Describe the programming language that you used and any libraries.}
+* [Android Studio](https://developer.android.com/studio)
+* [IntelliJ](https://www.jetbrains.com/idea/)
+* [Visual Studio Code](https://code.visualstudio.com/)
+* [Kotlin](https://kotlinlang.org/)
+* [OpenJDK](https://openjdk.java.net/)
+* [Git](https://git-scm.com/)
+* [GitHub](https://github.com/)
 
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
-* [Web Site Name](http://url.link.goes.here)
-* [Web Site Name](http://url.link.goes.here)
+* [Android Studio Reference](https://developer.android.com/reference/)
+* [Tutorials Point](https://www.tutorialspoint.com/kotlin/index.htm)
+* [Geeks for Geeks](https://www.geeksforgeeks.org/kotlin-android-tutorial/)
 
 # Future Work
 
-{Make a list of things that you need to fix, improve, and add in the future.}
-* Item 1
-* Item 2
-* Item 3
-
-{Adam Lynn test commit}
+* Add more words
+* Refine UI and Colors
