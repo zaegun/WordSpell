@@ -11,4 +11,6 @@
     <string name="scores">SCORES</string>
     <string name="subString">-</string>
     <string name="addString">+</string>
+    <string name="star">star</string>
+    <string name="start">Start</string>
 </resources>

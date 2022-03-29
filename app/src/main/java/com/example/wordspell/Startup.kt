@@ -19,37 +19,11 @@ class Startup : AppCompatActivity() {
         loadData(db)
         crossCheckList(db)
 
-
         // Gets the button and listens for the click to go to the next Activity
-        val button = findViewById<Button>(R.id.button)
+        val button = findViewById<Button>(R.id.toMainMenu)
         button.setOnClickListener {
             goToMainMenu()
         }
-
-        // FOR TESTING
-        val button2 = findViewById<Button>(R.id.button2)
-        button2.setOnClickListener {
-            val intent = Intent(this@Startup, WordSpell::class.java)
-            startActivity(intent)
-            finish()
-        }
-
-        val button3 = findViewById<Button>(R.id.button3)
-        button3.setOnClickListener {
-            val intent = Intent(this@Startup, Results::class.java)
-            startActivity(intent)
-            finish()
-        }
-
-        val button4 = findViewById<Button>(R.id.button4)
-        button4.setOnClickListener {
-            val intent = Intent(this@Startup, HighScore::class.java)
-            startActivity(intent)
-            finish()
-        }
-
-        val testView = findViewById<TextView>(R.id.textView2)
-        testView.text = Global.getScore("apple").toString()
     }
 
     fun loadData(db : DBHelper) {
@@ -100,4 +74,3 @@ class Startup : AppCompatActivity() {
         finish()
     }
 }
-
