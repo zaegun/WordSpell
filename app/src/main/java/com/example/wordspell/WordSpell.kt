@@ -14,22 +14,31 @@ class WordSpell : AppCompatActivity() {
     }
     // Save the total word list
     val wordList = Global.getTestList()
+
     // Number of the current word
     var currentWordNum = 0
+
     // The word currently being spelled
     var currentWord = "" //wordList[currentWordNum]
+
     // Letters of the current word
     val wordLetters = mutableListOf<String>()
+
     // Letters to be chosen from
     val letterOptions = mutableListOf<String>()
+
     // Letters currently selected
     var currentLetters = ""
+
     // Track the current letter in the word
     var currentLetterNum = 0
+
     // To keep track of what word we are on and how many words we have
     val numWords = wordList.size
+
     // Check if the current word is spelled correctly
     var wordSpelled = false
+
     // Keep track of score for the current word.
     // We want it to start at max.
     var score = 3
@@ -46,23 +55,50 @@ class WordSpell : AppCompatActivity() {
     // Iterate through the word list as we finish each word
     private fun progressList() {
         if (currentWordNum < numWords) {
+
             // Save the current word from the list
             currentWord = wordList[currentWordNum]
-            // Clear the letter list and the selected letters
-            wordLetters.clear()
-            currentLetters = ""
-            // Reset letter count
-            currentLetterNum = 0
+
             // Fill letter list with letters in current
-            //currentWord.forEach { j -> wordLetters.add(j.toString()) }
             for (letter in currentWord)
                 wordLetters.add(letter.toString())
+
+            // Initialize the page
             initializePage()
+
             // Progress to next word
             currentWordNum++
         }
     }
 
+    // Set up the default page
+    private fun initializePage() {
+
+        // Show progress-related text boxes as empty
+        val completeText = findViewById<TextView>(R.id.completeText)
+        completeText.text = ""
+        val continuePrompt = findViewById<TextView>(R.id.continuePrompt)
+        continuePrompt.text = ""
+
+        // Clear the letter list and the selected letters
+        wordLetters.clear()
+        currentLetters = ""
+
+        // Reset letter count
+        currentLetterNum = 0
+
+        // Make sure we don't think the word is spelled from the get-go
+        wordSpelled = false
+
+        // Set our score to max to start out each new word
+        score = 3
+
+        // ...and make sure it displays
+        val scoreDisplay = findViewById<TextView>(R.id.scoreDisplay)
+        scoreDisplay.text = score.toString()
+    }
+
+    // All of the useButton functions allow us to track which button is pressed
     fun useButton1(view: View) {
         val button = findViewById<Button>(R.id.letter1)
         spellWord(button)
@@ -105,25 +141,42 @@ class WordSpell : AppCompatActivity() {
 
     // Take inputs from the buttons to spell out the word
     fun spellWord(button: Button) {
+
         // Here we hold the display letters
         val wordDisplay = findViewById<TextView>(R.id.answerDisplay)
+
         // ...and here we display the score
         val scoreDisplay = findViewById<TextView>(R.id.scoreDisplay)
+
         // Save the value from the button
         val buttonValue = button.text as String
+
         // Make sure the word isn't complete
         // and check if the selection is correct
         if (currentLetterNum < currentWord.length) {
             if (buttonValue.compareTo(currentWord[currentLetterNum].toString()) == 0) {
+
+                // Add pressed button's value to the list
                 this.currentLetters += buttonValue
+
+                // Clear the button
                 button.text = ""
+
+                // We're on the next letter now
                 currentLetterNum++
             }
+
+            // If we still have a score and make a wrong guess...
             else if (score > 0 && buttonValue.compareTo("") != 0) {
+
+                // ...lower the score
                 score--
+
+                // Display new score
                 scoreDisplay.text = score.toString()
             }
 
+            // Display the string of selected letters
             wordDisplay.text = currentLetters
         }
 
@@ -131,37 +184,26 @@ class WordSpell : AppCompatActivity() {
         // but only after the user gets to look at it.
         // We'll have them push the button again when they're ready.
         if (wordSpelled){
+
             // We'll progress the list now
             progressList()
+
             // ...and clear the letters we already have
             wordDisplay.text = ""
         }
 
         // We also want to see if the word is spelled correctly
         if (currentLetters.compareTo(currentWord) == 0) {
+
             // Display progress-related text
             val completeText = findViewById<TextView>(R.id.completeText)
             completeText.text = "You did it!"
             val continuePrompt = findViewById<TextView>(R.id.continuePrompt)
             continuePrompt.text = "Press any button to continue"
+
             // Make sure we know the word is finished
             wordSpelled = true
         }
     }
 
-    // Set up the default page
-    private fun initializePage() {
-        // Show progress-related text boxes as empty
-        val completeText = findViewById<TextView>(R.id.completeText)
-        completeText.text = ""
-        val continuePrompt = findViewById<TextView>(R.id.continuePrompt)
-        continuePrompt.text = ""
-        // Make sure we don't think the word is spelled from the get-go
-        wordSpelled = false
-        // Set our score to max to start out each new word
-        score = 3
-        // ...and make sure it displays
-        val scoreDisplay = findViewById<TextView>(R.id.scoreDisplay)
-        scoreDisplay.text = score.toString()
-    }
 }
