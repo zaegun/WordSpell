@@ -84,6 +84,9 @@ class WordSpell : AppCompatActivity() {
         setImage(word)
         setAudio(word)
 
+        // Play audio
+        playAudio(word)
+
         // Fill letter list with letters in current
         for (letter in currentWord)
             wordLetters.add(letter.toString())
@@ -150,6 +153,9 @@ class WordSpell : AppCompatActivity() {
 
             // ...add it to the current button...
             button.text = letter
+
+            // ... and make it visible...
+            button.visibility = View.VISIBLE
 
             // .. then remove it from the list
             letterOptions.remove(letter)
@@ -219,6 +225,7 @@ class WordSpell : AppCompatActivity() {
 
                 // Clear the button
                 button.text = ""
+                button.visibility = View.INVISIBLE
 
                 // We're on the next letter now
                 currentLetterNum++
@@ -298,6 +305,19 @@ class WordSpell : AppCompatActivity() {
             // Start the audio file in the button
             mediaPlayer?.start()
         }
+    }
+
+    private fun playAudio(word : String){
+        // Get the audio file based on the supplied word
+        val mediaPlayer = MediaPlayer.create(
+            this,
+            resources.getIdentifier(
+                word,
+                "raw",
+                packageName
+            ))
+        // Start the audio file in the button
+        mediaPlayer?.start()
     }
 
     private fun goToResults() {
