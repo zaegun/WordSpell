@@ -51,15 +51,6 @@ class WordSpell : AppCompatActivity() {
     // We want it to start at max.
     var score = 3
 
-
-    // Grab text box elements
-//        var textBox = findViewById<TextView>(R.id.test_box)
-//        // textBox.text = wordList[0]
-//        val apple = wordList[0]
-//        Global.setScore(apple, 2)
-//        var score = Global.getScore(apple)
-//        var track = Global.getTrackNum()
-
     // Iterate through the word list as we finish each word
     private fun progressList() {
         if (currentWordNum < numWords) {
@@ -72,6 +63,11 @@ class WordSpell : AppCompatActivity() {
 
             // Progress to next word
             currentWordNum++
+        }
+
+        // Progress to results screen when all the words have been spelled
+        else{
+            goToResults()
         }
     }
 
@@ -161,48 +157,48 @@ class WordSpell : AppCompatActivity() {
     }
 
     // All of the useButton functions allow us to track which button is pressed
-    fun useButton1(view: View) {
+    private fun useButton1(view: View) {
         val button = findViewById<Button>(R.id.letter1)
         spellWord(button,view)
     }
 
-    fun useButton2(view: View) {
+    private fun useButton2(view: View) {
         val button = findViewById<Button>(R.id.letter2)
         spellWord(button,view)
     }
 
-    fun useButton3(view: View) {
+    private fun useButton3(view: View) {
         val button = findViewById<Button>(R.id.letter3)
         spellWord(button,view)
     }
 
-    fun useButton4(view: View) {
+    private fun useButton4(view: View) {
         val button = findViewById<Button>(R.id.letter4)
         spellWord(button,view)
     }
 
-    fun useButton5(view: View) {
+    private fun useButton5(view: View) {
         val button = findViewById<Button>(R.id.letter5)
         spellWord(button,view)
     }
 
-    fun useButton6(view: View) {
+    private fun useButton6(view: View) {
         val button = findViewById<Button>(R.id.letter6)
         spellWord(button,view)
     }
 
-    fun useButton7(view: View) {
+    private fun useButton7(view: View) {
         val button = findViewById<Button>(R.id.letter7)
         spellWord(button,view)
     }
 
-    fun useButton8(view: View) {
+    private fun useButton8(view: View) {
         val button = findViewById<Button>(R.id.letter8)
         spellWord(button,view)
     }
 
     // Take inputs from the buttons to spell out the word
-    fun spellWord(button: Button, view: View) {
+    private fun spellWord(button: Button, view: View) {
 
         // Here we hold the display letters
         val wordDisplay = findViewById<TextView>(R.id.answerDisplay)
