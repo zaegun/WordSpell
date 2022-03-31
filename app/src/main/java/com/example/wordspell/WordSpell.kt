@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import kotlin.random.Random
 
 class WordSpell : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,13 +24,16 @@ class WordSpell : AppCompatActivity() {
     var currentWordNum = 0
 
     // The word currently being spelled
-    var currentWord = "" //wordList[currentWordNum]
+    var currentWord = ""
 
     // Letters of the current word
     val wordLetters = mutableListOf<String>()
 
     // Letters to be chosen from
-    val letterOptions = mutableListOf<String>()
+    var letterOptions = mutableListOf<String>()
+
+    // Letter list
+    val letters = arrayOf('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z')
 
     // Letters currently selected
     var currentLetters = ""
@@ -63,10 +67,6 @@ class WordSpell : AppCompatActivity() {
             // Save the current word from the list
             currentWord = wordList[currentWordNum]
 
-            // Fill letter list with letters in current
-            for (letter in currentWord)
-                wordLetters.add(letter.toString())
-
             // Initialize the page
             initializePage(currentWord)
 
@@ -78,10 +78,22 @@ class WordSpell : AppCompatActivity() {
     // Set up the default page
     private fun initializePage(word: String) {
 
+        // Access the word display
         val wordDisplay = findViewById<TextView>(R.id.answerDisplay)
+
+        // Display blank spaces
         wordDisplay.text = formatSpellText(word, "")
+
+        // Set image and audio for the given word
         setImage(word)
         setAudio(word)
+
+        // Fill letter list with letters in current
+        for (letter in currentWord)
+            wordLetters.add(letter.toString())
+
+        // Prepare letter options
+        prepareOptions(wordLetters)
 
         // Show progress-related text boxes as empty
         val completeText = findViewById<TextView>(R.id.completeText)
@@ -102,9 +114,50 @@ class WordSpell : AppCompatActivity() {
         // Set our score to max to start out each new word
         score = 3
 
-        // ...and make sure it displays
+        // ...and make sure it displays.
         val scoreDisplay = findViewById<TextView>(R.id.scoreDisplay)
         scoreDisplay.text = score.toString()
+    }
+
+    // Prepare the letter options for spelling.
+    private fun prepareOptions(wordLetters: MutableList<String>) {
+
+        // Save the letters for the word we are spelling.
+        letterOptions = wordLetters
+
+        // For all of the remaining spaces...
+        for (i in letterOptions.size..8) {
+
+            // ...generate random letters...
+            val letter = letters[Random.nextInt(0,25)]
+
+            // ...and save them as well.
+            letterOptions.add(letter.toString())
+        }
+
+        // Now we make a list of buttons so we can save a letter to each
+        val button1 = findViewById<Button>(R.id.letter1)
+        val button2 = findViewById<Button>(R.id.letter2)
+        val button3 = findViewById<Button>(R.id.letter3)
+        val button4 = findViewById<Button>(R.id.letter4)
+        val button5 = findViewById<Button>(R.id.letter5)
+        val button6 = findViewById<Button>(R.id.letter6)
+        val button7 = findViewById<Button>(R.id.letter7)
+        val button8 = findViewById<Button>(R.id.letter8)
+        val buttons = arrayOf(button1,button2,button3,button4,button5,button6,button7,button8)
+
+        // Now a loop to add the letters
+        for (button in buttons) {
+
+            // First, pull a random letter from our options...
+            val letter = letterOptions[Random.nextInt(0,letterOptions.size - 1)]
+
+            // ...add it to the current button...
+            button.text = letter
+
+            // .. then remove it from the list
+            letterOptions.remove(letter)
+        }
     }
 
     // All of the useButton functions allow us to track which button is pressed
