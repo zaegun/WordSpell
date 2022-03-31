@@ -13,4 +13,14 @@
     <string name="addString">+</string>
     <string name="star">star</string>
     <string name="start">Start</string>
+    <string name="audio_button">Audio_Button</string>
+    <string name="word_image">Word_Image</string>
+    <string name="Blank" />
+    <string name="btn8">Btn8</string>
+    <string name="btn7">Btn7</string>
+    <string name="btn6">Btn6</string>
+    <string name="btn5">Btn5</string>
+    <string name="btn4">Btn4</string>
+    <string name="btn3">Btn3</string>
+    <string name="btn2">Btn2</string>
 </resources>
