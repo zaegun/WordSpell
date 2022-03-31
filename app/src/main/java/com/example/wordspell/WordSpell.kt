@@ -157,42 +157,42 @@ class WordSpell : AppCompatActivity() {
     }
 
     // All of the useButton functions allow us to track which button is pressed
-    private fun useButton1(view: View) {
+    fun useButton1(view: View) {
         val button = findViewById<Button>(R.id.letter1)
         spellWord(button,view)
     }
 
-    private fun useButton2(view: View) {
+    fun useButton2(view: View) {
         val button = findViewById<Button>(R.id.letter2)
         spellWord(button,view)
     }
 
-    private fun useButton3(view: View) {
+    fun useButton3(view: View) {
         val button = findViewById<Button>(R.id.letter3)
         spellWord(button,view)
     }
 
-    private fun useButton4(view: View) {
+    fun useButton4(view: View) {
         val button = findViewById<Button>(R.id.letter4)
         spellWord(button,view)
     }
 
-    private fun useButton5(view: View) {
+    fun useButton5(view: View) {
         val button = findViewById<Button>(R.id.letter5)
         spellWord(button,view)
     }
 
-    private fun useButton6(view: View) {
+    fun useButton6(view: View) {
         val button = findViewById<Button>(R.id.letter6)
         spellWord(button,view)
     }
 
-    private fun useButton7(view: View) {
+    fun useButton7(view: View) {
         val button = findViewById<Button>(R.id.letter7)
         spellWord(button,view)
     }
 
-    private fun useButton8(view: View) {
+    fun useButton8(view: View) {
         val button = findViewById<Button>(R.id.letter8)
         spellWord(button,view)
     }
