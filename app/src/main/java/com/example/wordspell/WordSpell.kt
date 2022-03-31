@@ -18,7 +18,7 @@ class WordSpell : AppCompatActivity() {
         progressList()
     }
     // Save the total word list
-    val wordList = Global.getTestList()
+    val wordList = Global.workingList
 
     // Number of the current word
     var currentWordNum = 0
