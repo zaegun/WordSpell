@@ -8,7 +8,7 @@ Then the user will be shown a picture and told what word they should be spelling
 
 After the word is spelled, they move on to the next word until the amount they chose is done. They then can see a list of their scores. They can also see all the high scores for all the words in the app.
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/Qtt4-QKVbD8)
 
 # Development Environment Links
 
